@@ -1,6 +1,6 @@
 {
   "name": "luma-discovery",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read-only Luma public event discovery for AI agents and apps: geographic search and event details, normalized to an open event record, with attendee data stripped. Library plus MCP server.",
   "license": "MIT",
   "author": "Mihir Kavishwar",
@@ -20,7 +20,7 @@
     "smoke": "tsx scripts/smoke.ts"
   },
   "peerDependencies": {
-    "@modelcontextprotocol/sdk": "^1.32.0",
+    "@modelcontextprotocol/sdk": "^1.20.0",
     "zod": "^3.25 || ^4.0"
   },
   "peerDependenciesMeta": {
