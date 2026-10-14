@@ -1,0 +1,37 @@
+{
+  "name": "luma-discovery",
+  "version": "0.1.0",
+  "description": "Read-only Luma public event discovery for AI agents and apps: geographic search and event details, normalized to an open event record, with attendee data stripped. Library plus MCP server.",
+  "license": "MIT",
+  "author": "Mihir Kavishwar",
+  "repository": { "type": "git", "url": "git+https://github.com/mihirkavi/luma-discovery.git" },
+  "type": "module",
+  "exports": {
+    ".": { "types": "./src/index.ts", "default": "./src/index.ts" }
+  },
+  "bin": { "luma-discovery-mcp": "./src/mcp.ts" },
+  "files": ["src", "README.md", "LICENSE"],
+  "keywords": ["luma", "events", "event-discovery", "mcp", "model-context-protocol", "ai-agents"],
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "mcp": "tsx src/mcp.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test test/*.test.ts",
+    "smoke": "tsx scripts/smoke.ts"
+  },
+  "peerDependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.0",
+    "zod": "^3.25 || ^4.0"
+  },
+  "peerDependenciesMeta": {
+    "@modelcontextprotocol/sdk": { "optional": true },
+    "zod": { "optional": true }
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "@types/node": "^22.18.0",
+    "tsx": "^4.23.6",
+    "typescript": "~5.9.3",
+    "zod": "^4.3.6"
+  }
+}
