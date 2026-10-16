@@ -48,6 +48,17 @@ npm run mcp   # stdio transport
 
 Claude Code example: `claude mcp add luma-discovery -- npx tsx /path/to/luma-discovery/src/mcp.ts`
 
+## Project structure
+
+```
+src/
+├── index.ts    # LumaDiscoveryClient and normalization to open event records
+├── types.ts    # open event record types
+└── mcp.ts      # stdio MCP server
+test/           # unit tests with recorded-shape fixtures
+scripts/smoke.ts  # live smoke check
+```
+
 ## Development
 
 ```bash
