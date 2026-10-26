@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.png">
-    <img alt="luma-discovery: public Luma events, one call away. Search nearby events and read event details from TypeScript or any MCP client, with no sign-in and no guest lists." src=".github/assets/banner-light.png" width="100%">
+    <img alt="luma-discovery: public events nearby, one call away. A map with search-radius rings around San Francisco and pins labelled with registration states such as open, waitlist, sold_out and approval_required, next to the luma_search_nearby tool name." src=".github/assets/banner-light.png" width="100%">
   </picture>
 </p>
 
@@ -19,10 +19,10 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-111111?style=flat-square"></a>
-  <img alt="TypeScript and MCP" src="https://img.shields.io/badge/TypeScript%20%C2%B7%20MCP-111111?style=flat-square">
-  <img alt="Status: v0.1" src="https://img.shields.io/badge/status-v0.1-6b6b6b?style=flat-square">
-  <a href="https://github.com/mihirkavi/luma-discovery/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/mihirkavi/luma-discovery/ci.yml?branch=main&style=flat-square&color=111111&label=CI"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-1d1424?style=flat-square"></a>
+  <img alt="TypeScript and MCP" src="https://img.shields.io/badge/TypeScript%20%C2%B7%20MCP-ff5a3c?style=flat-square">
+  <img alt="Status: v0.1" src="https://img.shields.io/badge/status-v0.1-ffb020?style=flat-square">
+  <a href="https://github.com/mihirkavi/luma-discovery/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/mihirkavi/luma-discovery/ci.yml?branch=main&style=flat-square&color=1d1424&label=CI"></a>
 </p>
 
 <p align="center">

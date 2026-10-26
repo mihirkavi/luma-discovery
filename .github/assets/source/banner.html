@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>luma-discovery banner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=JetBrains+Mono:wght@500;600&display=block" rel="stylesheet">
+<style>
+  /* Identity: warm "evening out" palette (coral, amber, plum on cream), Bricolage Grotesque + JetBrains Mono,
+     and a map with search-radius rings and pins labelled with the real registration states. Sibling of
+     structured-event-feeds (same type families, different hue and motif). Not Luma's own branding. */
+  :root {
+    --bg: #fff6ec; --ink: #1d1424; --muted: #6a5866; --coral: #ff5a3c; --amber: #ffb020; --plum: #5a2a7e;
+    --map: #fdeadb; --street: rgba(29, 20, 36, .09); --water: #f6d9c9; --card: #ffffff; --line: rgba(29, 20, 36, .12);
+    --ring: rgba(255, 90, 60, .55);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #170f1d; --ink: #fff3e8; --muted: #c4b0bf; --coral: #ff6e4f; --amber: #ffc04d; --plum: #c9a0f0;
+      --map: #23172b; --street: rgba(255, 243, 232, .08); --water: #2c1d36; --card: #2a1d33; --line: rgba(255, 243, 232, .14);
+      --ring: rgba(255, 110, 79, .6);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1600px; height: 600px; overflow: hidden; }
+  body { background: var(--bg); color: var(--ink); font-family: "Bricolage Grotesque", system-ui, sans-serif; position: relative; }
+  .copy { position: absolute; left: 90px; top: 92px; width: 760px; }
+  .name { font: 600 22px/1 "JetBrains Mono", monospace; color: var(--ink); display: flex; align-items: center; gap: 12px; }
+  .name i { width: 14px; height: 14px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--coral); display: inline-block; }
+  h1 { margin-top: 40px; font-size: 84px; line-height: .98; font-weight: 800; letter-spacing: -.035em; font-variation-settings: "wdth" 100, "opsz" 96; }
+  h1 span { color: var(--coral); }
+  .sub { margin-top: 26px; font-size: 24px; line-height: 1.45; color: var(--muted); max-width: 680px; font-variation-settings: "opsz" 24; }
+  .chips { margin-top: 30px; display: flex; gap: 10px; }
+  .chips span { font: 500 15px/1 "JetBrains Mono", monospace; padding: 9px 13px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
+
+  .map { position: absolute; right: 70px; top: 50px; width: 640px; height: 500px; border-radius: 32px; overflow: hidden; background: var(--map); border: 1px solid var(--line); }
+  .map svg { position: absolute; inset: 0; }
+  .pin { position: absolute; display: flex; align-items: center; gap: 8px; transform: translate(-12px, -30px); }
+  .pin i { width: 24px; height: 24px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--coral); box-shadow: 0 6px 14px rgba(255, 90, 60, .35); flex: none; }
+  .pin i::after { content: ""; display: block; width: 8px; height: 8px; margin: 8px; border-radius: 50%; background: var(--card); }
+  .pin b { font: 600 14px/1 "JetBrains Mono", monospace; padding: 7px 10px; border-radius: 10px; background: var(--card); color: var(--ink); border: 1px solid var(--line); white-space: nowrap; }
+  .pin.amber i { background: var(--amber); box-shadow: 0 6px 14px rgba(255, 176, 32, .35); }
+  .pin.plum i { background: var(--plum); box-shadow: none; }
+  .center { position: absolute; left: 300px; top: 250px; width: 18px; height: 18px; margin: -9px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 6px var(--card); }
+  .coords { position: absolute; left: 22px; bottom: 22px; font: 600 15px/1 "JetBrains Mono", monospace; padding: 10px 14px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); color: var(--ink); }
+  .coords em { font-style: normal; color: var(--coral); }
+  .tool { position: absolute; right: 22px; top: 22px; font: 600 15px/1 "JetBrains Mono", monospace; padding: 10px 14px; border-radius: 12px; background: var(--ink); color: var(--bg); }
+</style>
+</head>
+<body>
+  <section class="copy">
+    <div class="name"><i></i>luma-discovery</div>
+    <h1>Public events nearby,<br><span>one call away.</span></h1>
+    <p class="sub">Search public Luma events by place and time from TypeScript or any MCP client. No sign-in, no guest lists.</p>
+    <div class="chips"><span>TypeScript</span><span>MCP server</span><span>read-only</span><span>MIT</span></div>
+  </section>
+  <div class="map">
+    <svg viewBox="0 0 640 500" width="640" height="500" aria-hidden="true">
+      <path d="M0 360 C 120 330, 180 420, 300 440 S 520 420, 640 470 V 500 H 0 Z" fill="var(--water)"/>
+      <g stroke="var(--street)" stroke-width="10" fill="none" stroke-linecap="round">
+        <path d="M-20 120 L 660 60"/><path d="M-20 250 L 660 230"/><path d="M80 -20 L 140 520"/><path d="M420 -20 L 380 520"/><path d="M560 -20 L 600 380"/>
+      </g>
+      <g stroke="var(--street)" stroke-width="4" fill="none">
+        <path d="M-20 190 L 660 150"/><path d="M-20 310 L 660 300"/><path d="M220 -20 L 250 520"/><path d="M500 -20 L 480 400"/><path d="M30 -20 L 60 380"/>
+      </g>
+      <g fill="none" stroke="var(--ring)">
+        <circle cx="300" cy="250" r="90" stroke-width="2"/>
+        <circle cx="300" cy="250" r="170" stroke-width="2" stroke-dasharray="6 8"/>
+        <circle cx="300" cy="250" r="250" stroke-width="1.5" stroke-dasharray="2 10"/>
+      </g>
+    </svg>
+    <div class="center"></div>
+    <div class="pin" style="left:360px; top:190px"><i></i><b>open · free</b></div>
+    <div class="pin amber" style="left:170px; top:150px"><i></i><b>waitlist</b></div>
+    <div class="pin plum" style="left:400px; top:340px"><i></i><b>approval_required</b></div>
+    <div class="pin" style="left:140px; top:330px"><i></i><b>sold_out</b></div>
+    <div class="pin amber" style="left:470px; top:120px"><i></i><b>open</b></div>
+    <div class="tool">luma_search_nearby</div>
+    <div class="coords"><em>37.7749</em>, <em>−122.4194</em> · next 3 days</div>
+  </div>
+</body>
+</html>
